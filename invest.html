@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investimentos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/hover.css" rel="stylesheet" media="all">
+</head>
+    <div id="button">
+        <button type="button" class="hvr-fade hvr-grow-shadow" onclick="showT()">TOTAL</button>
+        <button type="button" class="hvr-fade hvr-grow-shadow" onclick="showA()">ACOES</button>
+        <button type="button" class="hvr-fade hvr-grow-shadow" onclick="showRF()">RENDA FIXA</button>
+        <button type="button" class="hvr-fade hvr-grow-shadow" onclick="showF()">FII</button>
+    </div>
+    <h2><vor>Ultima atualização: 25/08/2020</vor></h2>
+    <canvas class="line-Chart"></canvas>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+    <script>
+        var canvas = document.getElementsByClassName("line-Chart");
+        var data = {
+                labels: ["RENDA FIXA", "AÇÕES", "FII"],
+                datasets:[{
+                    data: [33,33,34],
+                    backgroundColor: [
+                        "#36a2eb",
+                        "#ff6384",
+                        "#4bc0c0",
+                        "#ff9f40",
+                        "#9966ff",
+                        "#ffcd56",
+                        "#c9cbcf",
+                        "#673ab7",
+                    ],
+                }],
+                
+            };
+
+        var chartGraph = new Chart(canvas,{
+            type: 'doughnut',
+	        data: data
+        });
+        function showT(){
+	        chartGraph.data.datasets[0].data[0] = 33;
+            chartGraph.data.labels[0] = "RENDA FIXA";
+            chartGraph.data.datasets[0].data[1] = 33;
+            chartGraph.data.labels[1] = "AÇÕES";
+            chartGraph.data.datasets[0].data[2] = 34;
+            chartGraph.data.labels[2] = "FII";
+            //all
+            chartGraph.data.labels.splice(3, 5);
+            chartGraph.data.datasets[0].data[3] = "";
+            chartGraph.data.datasets[0].data[4] = "";
+            chartGraph.data.datasets[0].data[5] = "";
+            chartGraph.data.datasets[0].data[6] = "";
+            chartGraph.data.datasets[0].data[7] = "";
+            chartGraph.update();
+        }
+        function showA(){
+	        chartGraph.data.datasets[0].data[0] = 10.53;
+            chartGraph.data.labels[0] = "GRND3";
+            chartGraph.data.datasets[0].data[1] = 9.50;
+            chartGraph.data.labels[1] = "ITSA3";
+            chartGraph.data.datasets[0].data[2] = 10.39;
+            chartGraph.data.labels[2] = "ABEV3";
+            chartGraph.data.datasets[0].data[3] = 9.19;
+            chartGraph.data.labels[3] = "ODPV3";
+            chartGraph.data.datasets[0].data[4] = 25.27;
+            chartGraph.data.labels[4] = "WEGE3";
+            chartGraph.data.datasets[0].data[5] = 12.01;
+            chartGraph.data.labels[5] = "FLRY3";
+            chartGraph.data.datasets[0].data[6] = 13.02;
+            chartGraph.data.labels[6] = "B3SA3";
+            chartGraph.data.datasets[0].data[7] = 10.08;
+            chartGraph.data.labels[7] = "VLID3";
+            chartGraph.update();
+        }
+        function showRF(){
+	        chartGraph.data.datasets[0].data[0] = 72.68;
+            chartGraph.data.labels[0] = "CDB 100% CDI";
+            chartGraph.data.datasets[0].data[1] = 21.85;
+            chartGraph.data.labels[1] = "CDB 100% CDI";
+            chartGraph.data.datasets[0].data[2] = 5.47;
+            chartGraph.data.labels[2] = "CDB 100% CDI";
+            //all
+            chartGraph.data.labels.splice(3, 5);
+            chartGraph.data.datasets[0].data[3] = "";
+            chartGraph.data.datasets[0].data[4] = "";
+            chartGraph.data.datasets[0].data[5] = "";
+            chartGraph.data.datasets[0].data[6] = "";
+            chartGraph.data.datasets[0].data[7] = "";
+            chartGraph.update();
+        }
+        function showF(){
+	        chartGraph.data.datasets[0].data[0] = 42.2;
+            chartGraph.data.labels[0] = "BCFF11";
+            chartGraph.data.datasets[0].data[1] = 29.1;
+            chartGraph.data.labels[1] = "HGLG11";
+            chartGraph.data.datasets[0].data[2] = 28.6;
+            chartGraph.data.labels[2] = "MXRF11";
+            //all
+            chartGraph.data.labels.splice(3, 5);
+            chartGraph.data.datasets[0].data[3] = "";
+            chartGraph.data.datasets[0].data[4] = "";
+            chartGraph.data.datasets[0].data[5] = "";
+            chartGraph.data.datasets[0].data[6] = "";
+            chartGraph.data.datasets[0].data[7] = "";
+            chartGraph.update();
+        }
+        
+        
+
+
+
+
+
+
+
+        
+    </script>
+    <div id="button" style="margin-top: 30px;">
+    <button type="button" class="hvr-fade hvr-grow-shadow" onclick="location.href='index.html'" >Voltar</button>
+    </div>
+</body>
+</html>
